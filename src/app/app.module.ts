@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {StoreModule} from "@ngrx/store";
 import {counterReducer} from "./reducers/counter.reducer";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,10 @@ import {counterReducer} from "./reducers/counter.reducer";
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.provideStore({counter: counterReducer})
+    StoreModule.provideStore({counter: counterReducer}),
+    StoreDevtoolsModule.instrumentOnlyWithExtension({
+      maxAge: 5
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
