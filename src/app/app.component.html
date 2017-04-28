@@ -1,3 +1,11 @@
 <h1>
   {{title}}
 </h1>
+
+
+<h2>Quick Redux Example</h2>
+<button (click)="increment()">Increment</button>
+<div>Current Count: {{ counter | async }}</div>
+<button (click)="decrement()">Decrement</button>
+
+<button (click)="reset()">Reset Counter</button>
